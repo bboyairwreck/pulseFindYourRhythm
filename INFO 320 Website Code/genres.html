@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Pulse, Find Your Rhythm</title>
+		<link href="Pulse.css" type="text/css" rel="stylesheet" />
+		<link href="genres.css" type="text/css" rel="stylesheet" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src="Pulse.js" type="text/javascript"></script>
+		<script src="genres.js" type="text/javascript"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script type="text/javascript" src="textSelect.js"></script>
+		<script type="text/javascript">
+			var timer = null;
+			$(document).ready(function(){
+				$('#bpmbar').click(function(){
+					$('#pulseMtn').addClass('grow');
+
+					timer = setTimeout(function(){
+						$('#pulseMtn').removeClass('grow');
+					}, 101);
+
+				});
+			});
+		</script>
+
+
+		
+		<meta charset='utf-8'>
+		<meta content='Find the BPM to every song ever.  Type a BPM, get a song.' name='description'>
+		<meta content='bpm, song, song bpm, tempo, pace, music bpm, songs bpm, song pace, music pace, song tempo, music tempo' name='keywords'>
+        <script>
+			// GOOGLE ANALYTICS
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+			
+			ga('create', 'UA-45416039-1', 'uw.edu');
+			ga('send', 'pageview');
+		</script>
+	</head>
+
+	<body>
+		
+		<header>
+			<div id="headingwrap">
+				<div class="heading">
+					<a href="http://pulse.info320.ischool.uw.edu/" id="logowrap">				
+						<img src="pulselogo.png" alt="Pulse Logo" height="100" width="100" id="pulselogo">
+					</a>
+					<div id="heading2">
+						<a href="http://pulse.info320.ischool.uw.edu/" id="heading">	
+							PULSE
+						</a>	
+						<p id="heading3">Find Your Rhythm</p>
+					</div>
+				</div>
+				<div id="selections">
+					
+						
+					<input type="text" name="searchText" id="topbar" disabled/>
+					
+					<div class="selectbar">
+						<a href="http://pulse.info320.ischool.uw.edu/" class="select">	
+							HOME
+						</a>
+					</div>
+					
+					<div class="selectbar">
+						<a href="http://pulse.info320.ischool.uw.edu/" class="select">	
+							ARTISTS
+						</a>
+					</div>
+					
+					<div class="selectbar">
+						<a href="http://pulse.info320.ischool.uw.edu/" class="select">	
+							GENRES
+						</a>
+					</div>
+					
+					<div class="selectbar">
+						<a href="http://pulse.info320.ischool.uw.edu/" class="select">	
+							BPM
+						</a>
+					</div>
+				</div>
+				
+				<h1 class="invis">	
+					PULSE
+				</h1>
+				<h2 class="invis">
+					Find Your Rhythm
+				</h2>	
+				
+			</div>
+		</header>
+		
+		<div id="bigWrap">
+			<div id="animationWrap">
+				<div id="hpWrap">
+					<img id="hpNoGlow" src="headphoneNoGlow.png" alt="Heapdhone Img" />
+					<div id="glowLine">
+						<div id="pulsePoint"></div>
+					</div>
+					<div id="pulseMtnWrap">
+						<div id="pulseMtnInner">
+							<img id="pulseMtn" class="shrink" src="justGlow.png" alt="pusleLine" />
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div id = "queryWrap">
+				<div id="searchWrap">
+					<div id="searchBox">
+						<span id="selector" class="selNormal">
+							<span id="attrText">All</span>
+							<span id="downArrow"></span>
+							<select name="attrSelect">
+								<option>All</option>
+								<option>BPM</option>
+								<option>Song</option>
+								<option>Artist</option>
+								<option>Genre</option>
+							</select>
+						</span>
+						<div id="searchTextWrap">
+							<input type="text" name="searchText" placeholder="Enter text here" id="searchbar" autofocus/>
+						</div>
+					</div>
+					<input type="submit" value="Search" id="submitbar" /> 
+				</div>
+				<div id="genres">
+					<div class="genrebuttonunselected">Pop</div>
+					<div class="genrebuttonunselected">Metal</div>
+					<div class="genrebuttonunselected">Rock</div>
+					<div class="genrebuttonunselected">Rap</div>
+					<div class="genrebuttonunselected">Country</div>
+					<div class="genrebuttonunselected">Hip-Hop</div>
+					<div class="genrebuttonunselected">R&amp;B</div>
+					<div class="genrebuttonunselected">Electronic</div>
+					<div class="genrebuttonunselected">Trance</div>
+				</div>
+		</div>		
+	</body>
+</html>

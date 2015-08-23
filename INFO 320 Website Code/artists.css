@@ -1,0 +1,5 @@
+#artists > div {
+	background-color: black;
+	display: block;
+	color: white;
+}

@@ -1,0 +1,606 @@
+/*@import url(http://fonts.googleapis.com/css?family=Signika-Negative);*/
+
+html, body {
+	background-color: black;
+	background-image: url("pulsebackground.jpg");
+	background-position: -250px 50px;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	margin: 0px;
+	padding: 0px;
+	background-size: 70%;
+}
+
+html {
+	overflow: scroll;
+}
+
+body {
+	margin-bottom: 90px;
+}
+
+header {
+	position: fixed;
+	z-index: 900;
+	width: 100%;
+	top: 0px;
+	margin: 0;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#383838), color-stop(100%,#232323));
+	background: -moz-linear-gradient(top, #383838 0%, #232323 100%);
+}
+
+	#headingwrap {
+		width: 100%;
+	}
+
+		.heading {
+			float: left;
+		}
+
+			#invisibleLogo {
+				width:100px;
+				height: 1px;
+				float:left;
+			}
+
+			#logowrap {
+				position: absolute;
+				display: block;
+			}
+	
+				#pulselogo {
+					width:100px;
+					height:100px;
+				}
+
+			#heading2 {
+				float: left;
+			}
+				#heading {
+					font-size: 34pt;
+					margin-right: 12%;
+				}
+
+				#heading3 {
+					font-size: 10pt;
+					clear: left;
+					margin: 0;
+					margin-left: 1em;
+				}
+
+				@media (max-width: 800px) {
+					#heading {
+						font-size: 20pt;
+					}
+					#heading3 {
+						font-size: 7pt;
+					}
+				}
+
+				
+
+		#selections {
+			width: 57%;
+			font-size: 150%;
+			float: left;
+			height: 50px;
+			margin-top: 10px;
+			margin-left: 17px;
+		}
+
+			#topbar {
+				width:20%;
+				max-width: 200px;
+			}
+
+			#goBtn {
+				margin-left: 0px;
+				padding-left: 5px;
+				padding-right: 5px;
+			}
+
+			@media (max-width: 800px) {
+				#goBtn {
+					padding-left: 2px;
+					padding-right: 2px;
+				}
+			}
+
+			.tbDisabled {
+				opacity: .1;
+			}
+
+
+			#topbar, .select, #goBtn{
+				vertical-align: 12px;
+			}	
+
+			.selectbar{
+				display: inline-block;
+				width: 16%;
+				text-align: center;
+			}
+
+
+		@media (max-width: 1200px) {
+			#selections {
+				font-size: 100%;
+			}
+		}
+
+		@media (max-width: 800px) {
+			#pulselogo, #invisibleLogo {
+				width:70px;
+				height:70px;
+			}
+		}
+
+		@media (max-width: 553px) {
+			/*#invisibleLogo {
+				width: 10px;
+				height: 1px;
+			}
+
+			#logowrap {
+				display: none;
+			}*/
+			#selections {
+				font-size: 90%;
+				width: 70%;
+			}
+
+		}
+
+		@media (max-width: 475px) {
+			#selections {
+				width: 100%;
+			}
+			#invisibleLogo, #pulselogo {
+				width: 50px;
+				height: 50px;
+			}
+
+			#logowrap {
+				display: block;
+			}
+		}
+
+		.invis {
+			display: none;
+		}
+
+h1, p, a, h2{
+	color: white;
+	text-decoration: none;
+	font-family: 'Signika Negative', sans-serif;
+	font-weight: 100;
+}
+
+h1{
+	font-size: 200%;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+h2 {
+	margin-top: 0;
+	font-size: 12pt;
+}
+
+#bigWrap{
+	z-index: 30;
+	max-width: 900px;
+	margin-top: 100px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 90px;
+	/*overflow: hidden;*/
+}
+
+	#animationWrap{
+		float: left;
+		width: 33%;
+	}
+
+
+	#queryWrap{
+		float: left;
+		width: 66%;
+	}
+	
+		#searchWrap{
+			margin-top: 2em;
+			margin-bottom: 2em;
+			position: relative;
+		}
+
+			#searchBox {
+				width: 70%;
+				border: 1px solid black;
+				border-radius: 5px;
+				overflow: hidden;
+				position: relative;
+				float: left;
+
+				z-index: 31;
+			}
+
+				#searchbar {
+					height: 26px;
+				}
+
+
+			#submitbar{
+				font-size: 14pt;
+				background-color: #330066; 
+				border: 2px solid #330066; 
+				color: white;
+				border-radius: 5px;
+				width: 15%;
+			}
+
+			#sboxClone {
+				position: absolute;
+				width: 70%;
+				height: 35px;
+				z-index: 950;
+				overflow: hidden;
+
+				background-color: white;
+				opacity: .7;
+				visibility: hidden;
+				transition: transform .7s, opacity 0s .5s;
+				-webkit-transition: -webkit-transform .7s, opacity 0s .7s;
+				-moz-transition: -moz-transform .7s, opacity 0s 1s;
+				-ms-transition: -ms-transform .7s, opacity 0s 1s;
+
+				transform-origin:0% 0%;
+				-webkit-transform-origin:0% 0%;
+				-moz-transform-origin:0% 0%;
+				-ms-transform-origin:0% 0%;
+
+
+			}
+
+		#bpmbar{
+			font-size: 18pt;
+			background-color: #888888; 
+			border: 5px solid #330066;
+			border-radius: 5px;
+			color: white;
+			height: 120px;
+			width: 30%;
+			float: left;
+		}
+
+		.number{
+			font-size: 48pt;
+			font-weight: 100;
+			float: left;
+			margin: 0;
+			margin-left: 15px;
+		}
+
+		@media (max-width: 625px) {
+			.number {
+				font-size: 30pt;
+			}
+		}
+
+#resultsHeader {
+	color: white;
+	font-family: 'Signika Negative', sans-serif;
+	font-weight: 100;
+	font-size: 150%;
+	max-width: 900px;
+	margin-top: 90px;
+	margin-left: auto;
+	margin-right: auto;
+
+	display: none;
+}
+
+	#resultHeader span {
+		font-style: italic;
+	}
+
+
+
+
+#results{
+	max-width: 900px;
+	margin-left: auto;
+	margin-right: auto;
+	overflow: hidden;
+
+	transition: opacity .5s .2s;
+	-webkit-transition: opacity .5s .2s;
+	-moz-transition: opacity .5s;
+	-ms-transition: opacity .5s;
+}
+	.resultsHidden {
+		opacity: 0;
+	}
+
+	#noResults {
+		color: grey;
+		font-style: italic;
+		padding-left:40px;
+		margin-top: 5px;
+		margin-bottom: 30px;
+		font-size: 110%;
+		font-weight: bold;
+	}
+
+
+	.resultsCell {
+		width: 100%;
+		overflow: hidden;
+		border-bottom: 1px solid grey;
+		max-height: 100px;
+
+		padding: 10px;
+		margin-right: auto;
+		margin-left: auto;
+	}
+
+		.resultsCell:first-child {
+			border-top: 1px solid grey;
+		}
+		.cellNumber, .attrWrap {
+			float: left;
+		}
+
+		.cellNumber {
+			width: 5%;
+			color: white;
+		}
+
+		.attrWrap {
+			width: 80%;
+		}
+	
+		.album{
+			border: 1px solid grey;
+			background-image: url("pulsebackground.jpg");
+			background-size: cover;
+			width: 100px;
+			height: 100px;
+			float: left;
+
+			margin-right: 15px;
+		}
+			.album :hover {
+				cursor: pointer;
+			}
+			.playIcon {
+				width: 85%;
+				height: 85%;
+				margin-left: 7.5%;
+				margin-top: 7.5%;
+				opacity: 0;
+
+				transition: opacity .7s;
+				-webkit-transition: opacity .7s;
+				-moz-transition: opacity .5s;
+				-ms-transition: opacity .5s;
+			}
+
+			.showPlay {
+				opacity: .7;
+			}
+
+		.songArtist{
+			width: 60%;
+			float: left;
+		}
+			.songTitle, .artistName{
+				margin: 0;
+				font-size: 14pt;
+			}
+
+			.artistName {
+				font-style: italic;
+			}
+
+		.bpmCell{
+			float: right;
+		}
+			.bpmText{
+				font-size: 24pt;
+			}
+
+#spinnerWrap {
+	text-align: center;
+	display: none;
+}
+
+
+
+/* Textfield Select box*/
+.searchBoxHover {
+	box-shadow: 0px 0px 3px grey;
+}
+
+.sbActive {
+	box-shadow: 0px 0px 4px orange;
+}
+
+
+#selector {
+	width: auto;
+	position: relative;
+	height: 100%;
+	float:left;
+	border-right: 1px solid grey;
+	padding: .4em 1em;
+}
+
+.selNormal {
+	background-color: #F7F7F7;
+}
+
+#selector:hover, .selActive {
+	background-color: #E6E6E6;
+}
+
+#attrText {
+	margin-right: 7px;
+}
+
+#downArrow {
+	display: inline-block;
+	width: 0; 
+	height: 0; 
+	border-left: .35em solid transparent;
+	border-right: .35em solid transparent;
+	
+	border-top: .35em solid #9C9C9C;
+	position:absolute;
+	right: .4em;
+	top:.85em;
+}
+
+#selector select {
+	position:absolute;
+	left:0px;
+	opacity: 0;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+}
+
+#searchTextWrap {
+	overflow: hidden;
+}
+
+#searchBox input[type="text"] {
+	width: 100%;
+	border:none;
+	outline: 0;
+	padding-left: .5em;
+	padding-top: .4em;
+	font-size: inherit;
+}
+
+
+/*Logo Animation*/
+#hpWrap {
+	width: 90%;
+	position: relative;
+}
+
+#hpNoGlow {
+	width:100%;
+	z-index: 100;
+	position: relative;
+}
+
+#glowLine {
+	position: absolute;
+	background-color: white;
+	width: 93%;
+	margin-left: 3.5%;
+	height: 2%;
+	bottom: 25%;
+	z-index: 50;
+	box-shadow: 0px 0px 10px 5px rgb(93,33,244);
+}
+
+#pulsePoint {
+	position: absolute;
+	width: 0%;
+	height: 0%;
+	top:50%;
+	left:0;
+	
+	box-shadow: 0px 0px 20px 10px rgb(93,33,244);
+
+	-webkit-animation-name: goAcross;
+	-webkit-animation-duration: 3s;
+	-webkit-animation-iteration-count:infinite;
+	-webkit-animation-timing-function:linear;
+}
+
+@-webkit-keyframes goAcross {
+	0% { left:0;}
+	100% { left:95%;}
+}
+
+#pulseMtnWrap {
+	position: absolute;
+	width: 93%;
+	margin-left: 3.5%;
+	height: 0%;
+	bottom: 26%;
+	z-index: 55;
+	background-color: blue;
+	overflow-y:visible;
+}
+
+#pulseMtnInner {
+	position: relative;
+	height: 100%;
+	background-color: red;
+	width: 100%;
+	overflow-y:visible;
+}
+
+#pulseMtn {
+	position: absolute;
+	width: 100%;
+	margin-top:-59%;
+
+	-webkit-transition: -webkit-transform .1s;
+}
+
+.shrink {
+	-webkit-transform: scaleY(0);
+}
+
+.grow {
+	-webkit-transform: scaleY(1);
+}
+
+.overHidden {
+	clear:both;
+	visibility: hidden;
+}
+
+#vidLink {
+	position: fixed;
+	right:3px;
+	bottom: 3px;
+	text-decoration: underline;
+
+}
+
+/*Scroll to Top */
+.scrollup {
+    width:40px;
+    height:40px;
+    opacity:0.3;
+    position:fixed;
+    bottom:50px;
+    right:100px;
+    display:none;
+    text-indent:-9999px;
+    background: url('icon_top.png') no-repeat;
+}
+
+@media (max-width: 1200px) {
+	.scrollup {
+		right:10px;
+	}
+}
+
+
+/*Internal Nav*/
+#content, #content2 {
+	position:absolute;
+	width: 100%;
+}
+
+#content2 {
+	visibility:hidden;
+}
